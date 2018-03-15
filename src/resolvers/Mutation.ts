@@ -44,7 +44,7 @@ export async function login(parent, args, context, info): Promise<AuthResponse> 
   };
 }
 
-export async function vote(parent, args, context, info) {
+export async function vote(parent, args, context, info): Promise<Mutation> {
   const userId = getUserId(context);
   const { linkId } = args;
   const linkExists = await context.db.exists.Vote({
